@@ -210,8 +210,8 @@ def load_content():
     # 
     row=get_next_from_queue(queue)
     print(row)
-    
-    load_and_display_image('a68f6d5c-79aa2039-e8c59740-8454a0c0-3cf5afab.jpg')
+    current_row = st.session_state.unevaluated_pairs[st.session_state.unevaluated_pairs['pairID'] == row]
+    load_and_display_image(current_row["dicom_ID"].values[0])
     # ok so what should be included in this thing. 
     # what needs to be completed. 
     columns = st.columns(2)
